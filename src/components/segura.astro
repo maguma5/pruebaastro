@@ -21,30 +21,15 @@ const {
   </h1>
 
   <!-- Imagen -->
-<img src={astroLogo.src} width="215" height="215" alt="Astro Homepage" aria-placeholder="center" />
+<img id="logo" src={astroLogo.src} />
 </a
 			>
 
-  <!-- <img
-    src={icono}
-    alt="Icono"
-    
-    class="w-[267px] h-[301px] object-contain mb-6 cursor-pointer"
-    onclick={onConfiguracion}
-    style="margin-top: 5vh;"
-  /> -->
-
-  <h2>sigo probando y ahora quito un div</h2>
-		<p>
-			Este es un proyecto de prueba para Astro.
-		</p>
 
   <!-- Botones -->
-  <div 
-  id="botones"
-  class="flex-col items-center space-Y-4 ">
+  <div id="botones">
     <button
-      class="w-[250px] h-[50px] bg-blue-600 text-white rounded shadow items-center mb-4"
+      
      
       onclick={onNuevaEmpresa}
     >
@@ -52,7 +37,7 @@ const {
     </button>
 
     <button
-      class="w-[250px] h-[50px] bg-blue-600 text-white rounded shadow items-center mb-4"
+      
       onclick={onNuevoUsuario} 
     >
       Alta de nuevo operario
@@ -81,6 +66,14 @@ const {
   </div>
 </div>
 <style>
+#logo {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    align-items: center;
+    margin-bottom: 20px;
+
+  }
   #botones {
     display: flex;
     flex-direction: column;
