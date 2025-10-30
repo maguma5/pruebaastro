@@ -1,8 +1,10 @@
 ---
 // src/components/MainLayout.astro
+import astroLogo from '../assets/iconosegura.jpg';
 const {
   empresa = "EMPRESA",
-  icono = "/iconosegura.jpg",
+  icono = astroLogo.src,
+  // icono = "/iconosegura.jpg",
   onConfiguracion = "configuracion()",
   onNuevaEmpresa = "nueva_empresa()",
   onNuevoUsuario = "nuevo_usuario()",
