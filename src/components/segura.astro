@@ -23,14 +23,12 @@ const {
   <!-- Imagen -->
 <img id="logo" src={astroLogo.src} onclick={onConfiguracion}
 />
-</a
-			>
 
 
   <!-- Botones -->
   <div id="botones">
     <button
-      
+      id="botonNueva"
      
       onclick={onNuevaEmpresa}
     >
@@ -89,9 +87,18 @@ const {
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-sizing: border-box;
-    font-size: large;
+    font-size: 30px;
     gap: 16px;
     margin-top: 5vh;
+  }
+  #botones button {
+    background-color: #3245ff;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 28px;
+    transition: background-color 0.3s ease;
   }
 </style>
