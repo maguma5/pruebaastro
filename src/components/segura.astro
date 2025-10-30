@@ -1,0 +1,67 @@
+---
+// src/components/MainLayout.astro
+const {
+  empresa = "Empresa",
+  icono = "/iconosegura.jpg",
+  onConfiguracion = "configuracion()",
+  onNuevaEmpresa = "nueva_empresa()",
+  onNuevoUsuario = "nuevo_usuario()",
+  onFichar = "fichar()",
+  onFicharMultiple = "fichar_multiple()",
+  onAbrirListado = "abrir_listado()",
+} = Astro.props;
+---
+
+<div class="flex flex-col items-center justify-start min-h-screen bg-white pt-10">
+  <!-- Título -->
+  <h1 class="text-[34px] font-serif text-center mb-4">
+    {empresa}
+  </h1>
+
+  <!-- Imagen -->
+  <img
+    src={icono}
+    alt="Icono"
+    class="w-[267px] h-[301px] object-contain mb-6 cursor-pointer"
+    onclick={onConfiguracion}
+    style="margin-top: 5vh;"
+  />
+
+  <!-- Botones -->
+  <div class="flex flex-col items-center gap-4">
+    <button
+      class="w-[250px] h-[50px] bg-blue-600 text-white rounded shadow"
+      onclick={onNuevaEmpresa}
+    >
+      Alta de nueva empresa
+    </button>
+
+    <button
+      class="w-[250px] h-[50px] bg-blue-600 text-white rounded shadow"
+      onclick={onNuevoUsuario}
+    >
+      Alta de nuevo operario
+    </button>
+
+    <button
+      class="w-[250px] h-[50px] bg-blue-600 text-white rounded shadow"
+      onclick={onFichar}
+    >
+      Fichaje individual
+    </button>
+
+    <button
+      class="w-[250px] h-[50px] bg-blue-600 text-white rounded shadow"
+      onclick={onFicharMultiple}
+    >
+      Fichaje diario
+    </button>
+
+    <button
+      class="w-[250px] h-[50px] bg-blue-600 text-white rounded shadow mb-4"
+      onclick={onAbrirListado}
+    >
+      Abrir listados
+    </button>
+  </div>
+</div>
