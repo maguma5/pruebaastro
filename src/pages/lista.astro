@@ -1,0 +1,36 @@
+---
+import { app } from "../firebase/server";
+import { getFirestore } from "firebase-admin/firestore";
+import Layout from "../layouts/Layout.astro";
+
+interface Friend {
+  id: string;
+  nombre: string;
+  dni: string;
+  empresa: string;
+}
+
+const db = getFirestore(app);
+const friendsRef = db.collection("trabajadores");
+const friendsSnapshot = await friendsRef.get();
+const friends = friendsSnapshot.docs.map((doc) => ({
+  id: doc.id,
+  ...doc.data(),
+})) as Friend[];
+---
+
+<Layout title="Mis trabajadores">
+  <h1>Amigos</h1>
+  <ul>
+    {
+      friends.map((friend) => (
+        <li>
+          <a href={`/friend/${friend.id}`}>{friend.nombre}</a>
+          <span>({friend.dni})</span>
+          <strong>{friend.empresa ? "Mejor amigo" : "Amigo"}</strong>
+          <a href={`/edit/${friend.id}`}>Editar</a>
+        </li>
+      ))
+    }
+  </ul>
+</Layout>
